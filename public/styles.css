@@ -1,0 +1,411 @@
+/* ROOTS & FONTS */
+
+/* Definieer het lettertype "Medium" */
+@font-face {
+    font-family: "Medium";
+    src: url("/fonts/Medium.otf") format("opentype");
+  }
+  
+/* Definieer het lettertype "Bold" */
+@font-face {
+    font-family: "Bold";
+    src: url("/fonts/Bold.otf") format("opentype");
+  }
+  
+/* Definieer root variabelen voor kleuren */
+:root {
+    --primary-color: rgb(97, 73, 216);
+    --white: #fff;
+    --grey: #aaa;
+    --black: #202020;
+  }
+  
+/* ELEMENTEN */
+
+/* Basisstijl voor het body-element */
+body {
+    font-family: "Medium", sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Kleur de tekst van span-elementen in de primaire kleur */
+span {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
+/* HEADER */
+  
+/* Stijl voor links / img in de header (logo) */
+header a img {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0.6em;
+    margin-left: 0.2em;
+    font-size: 1.6em;
+    width: 6em;
+    height: auto; 
+  }
+  
+/* Navigation */
+/* .navigation {
+    display: none;
+  } */
+  
+/* Hamburger-menu */
+.hamburger-menu {
+    height: 0;
+  }
+  
+/* Verberg de menu-toggle checkbox */
+#menu-toggle {
+    opacity: 0;
+  }
+  
+/* Stijl voor het geanimeerde hamburger-menu */
+
+/* Als het #menu-toggle element checked is, dan roteert de span binnen .menu-btn met 45 graden */
+#menu-toggle:checked ~ .menu-btn > span {
+  transform: rotate(45deg);
+}
+
+/* Als het #menu-toggle element checked is, dan stelt de positie van de pseudo-element ::before in en roteert het met 0 graden */
+#menu-toggle:checked ~ .menu-btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+
+/* Als het #menu-toggle element checked is, dan stelt de positie van de pseudo-element ::after in en roteert het met 90 graden */
+#menu-toggle:checked ~ .menu-btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Als het #menu-toggle element checked is, dan wordt de menu-box zichtbaar en plaatst deze aan het einde */
+#menu-toggle:checked ~ .menu-box {
+  visibility: visible;
+  inset-inline-end: 0;
+}
+  
+/* Stijl voor de menu-knop */
+.menu-btn {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    top: 20px;
+    inset-inline-end: 20px; /* Plaats de btn 20 pixels vanaf de rechterkant van zijn container in de inline-richting */
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 2; /* Zorgt ervoor dat menu knop zichtbaar blijft */
+  }
+  
+/* Stijl voor de drie streepjes van het hamburger-menu */
+.menu-btn > span,
+.menu-btn > span::before,
+.menu-btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 8px;
+    background-color: var(--black);
+    transition-duration: 0.5s;
+  }
+
+.menu-btn > span::before {
+    content: ""; /* Hamburger menu streepjes */
+    top: -8px; /* Plaats de pseudo-element 8px boven de hoofdstreep */
+  }
+.menu-btn > span::after {
+    content: ""; /* Hamburger menu streepjes */
+    top: 8px; /* Plaats de pseudo-element 8px onder de hoofdstreep */
+  }
+  
+/* Stijl voor de menu-box die verschijnt bij het klikken op de hamburger-menu */
+.menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    inset-inline-end: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: var(--white);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+      0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transition-duration: 0.6s;
+    z-index: 1;
+  }
+  
+/* Stijl voor de menu-items */
+.menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: var(--black);
+    font-size: 20px;
+    font-weight: 600; 
+    text-decoration: none; 
+    transition-duration: 0.6s;
+  }
+
+.menu-item:hover {
+    color: var(--primary-color);
+  }  
+
+/* MAIN */
+
+.main-index {
+  min-height: 20em; 
+  min-width: 24em; 
+  position: relative; 
+  background-size: cover; 
+  background-position: 50% 50%; 
+  background-image: url("/assets/main-index.svg");
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  z-index: -1; 
+}
+
+.main-index-wrapper {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin: 0 auto; 
+  top: 8em; 
+  width: 17em; 
+  height: 16em; 
+  padding: 2em; 
+  border-radius: 16px; 
+  border: 2px solid var(--grey); 
+  background-color: var(--white); 
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); 
+}
+
+/* H2 element */
+.main-index-wrapper h2 {
+  margin: 0.2em 0;
+}
+
+/* P element */
+.main-index-wrapper p {
+  font-size: 1em; 
+}
+
+/* Word lid knop */
+.main-index-wrapper a {
+  display: block; 
+  font-size: 1.2em; 
+  margin: 0; 
+  border-radius: 10px; 
+  border: 2px solid var(--black); 
+  padding: 0.5em; 
+  color: var(--primary-color);
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+.main-index-wrapper a:hover {
+  background-color: var(--primary-color); 
+  color: var(--white); 
+}
+
+/* Agencies */
+.agencies {
+  margin-top: 10em;
+}
+
+.main-index-article {
+  padding: 2em;
+  float: left;
+}
+
+/* Overzicht agencies knop */
+.main-index-article a {
+  display: block; 
+  font-size: 1.2em; 
+  margin: 0; 
+  border-radius: 10px; 
+  border: 2px solid var(--black); 
+  padding: 0.5em; 
+  float: left;
+  color: var(--primary-color);
+  text-decoration: none; 
+  font-weight: bold; 
+}
+
+.main-index-article a:hover {
+  background-color: var(--primary-color); 
+  color: var(--white); 
+}
+
+/* FOOTER */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: column;  */
+  align-items: center; 
+  background: var(--primary-color);
+  height: 100%;
+  text-align: center;
+  padding: 8px;
+}
+
+.footer-elements-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.footer-elements-rechts {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-logo,
+.footer-button {
+  margin-bottom: 10px; 
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  margin-bottom: 1em; 
+}
+
+.footer-logo img {
+  width: 6em;
+  height: auto; 
+  font-size: 1.6em;
+}
+
+.footer-button a {
+  display: block; 
+  font-size: 1.2em; 
+  margin: 0; 
+  border-radius: 10px; 
+  border: 2px solid var(--black); 
+  padding: 0.5em; 
+  background-color: var(--white);
+  width: 6em;
+  text-decoration: none; 
+  color: var(--black); 
+  text-align: center; 
+}
+
+.footer-button a:hover {
+  background-color: var(--grey);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.footer-mail {
+  padding: 6px;
+}
+
+.footer-mail h2 {
+  font-size: 1.8em;
+  color: (var(--black));
+  margin-bottom: 15px;
+}
+
+.footer-mail fieldset {
+  display: block; 
+  font-size: 1.2em; 
+  margin: 0; 
+  border-radius: 10px; 
+  border: 2px solid var(--black); 
+  padding: 0.5em; 
+  background-color: var(--white); 
+  width: auto; 
+}
+
+.footer-mail .flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-mail p {
+  margin: 0 0 15px;
+}
+
+.footer-mail input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.footer-mail input[type="text"]:focus {
+  border-color: #0066cc;
+  outline: none;
+}
+
+.footer-mail span {
+  color: red;
+  margin-left: 5px;
+}
+
+/* TEST button */
+.slide {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 30px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.slide i {
+  opacity: 0;
+  font-size: 13px;
+  transition: 0.2s;
+  position: absolute;
+  right: 10px;
+  top: 21px;
+  transition: transform 1;
+}
+
+.slide div {
+  transition: transform 0.8s;
+
+}
+
+.slide:hover div {
+  transform: translateX(-6px);
+}
+
+.slide::after {
+  content: "";
+  background-color: var(--white);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  border-radius: 0px; 
+  border: 2px solid var(--black); 
+}
+
+.slide:hover i {
+  opacity: 1;
+  transform: translateX(-6px);
+}
