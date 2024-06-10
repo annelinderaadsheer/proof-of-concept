@@ -8,7 +8,7 @@ import express from "express";
 import fetchJson from "./helpers/fetch-json.js";
 
 // Declare de base URL van de directus API
-const baseUrl = "https://fdnd-agency.directus.app";
+const baseUrl = "https://fdnd-agency.directus.app/items";
 
 // Maak een nieuwe express app aan
 const app = express();
@@ -39,7 +39,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // GET-route voor de index homepagina
 app.get("/", function (request, response) {
-  response.render("index");
+  response.render("index.ejs");
 });
 
 // GET-route voor overzicht agencies pagina
@@ -47,9 +47,15 @@ app.get("/agencies ", function (request, response) {
   response.render("agencies");
 });
 
-// GET-route voor vacatures pagina
+// GET-route voor vacatures, eigen data inladen 
 app.get("/vacatures", function (request, response) {
-  response.render("vacatures");
+  fetchJson(baseUrl + "/dda_agencies_vacancies").then(
+    (apiData) => {
+      {
+        response.render("vacatures.ejs", { data: apiData.data });
+      }
+    }
+  );
 });
 
 // Poortnummer instellen waarop Express moet luisteren

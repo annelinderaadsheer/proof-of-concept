@@ -1,0 +1,50 @@
+<!-- Hier word de header geinclude -->
+<%- include('./partials/head') %>
+
+<section class="vacatures"> 
+    <!-- Doe dit meerdere keren.. -->
+    <% data.forEach(item => { %>
+
+<article>
+
+    <!-- Titel -->
+    <h1><%= item.title %></h1>
+
+    <!-- Locatie -->
+    <p>Locatie: <%= item.locatie %></p>
+
+    <!-- Beschrijving -->
+    <% if (item.description) { %>
+    <p><%= item.description %></p>
+    <% } %>
+
+    <!-- Aantal uren -->
+    <p>Aantal uren: <%= item.hours %></p>
+
+    <!-- Salaris -->
+    <% if (item.salary) { %>
+    <p>Salaris: <%= item.salary %></p>
+    <% } %>
+
+    <!-- Soort baan -->
+    <% if (item.employment) { %>
+    <p>Functie: <%= item.employment %></p>
+    <% } %>
+
+    <!-- Datum geplaatst -->
+    <p>Datum vacature geplaatst: <%= item.date_posted %></p>
+
+    <!-- Foto -->
+    <picture class="banner">
+        <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
+    </picture>
+
+    <!-- URL Link -->
+    <% if (item.url) { %>
+    <a href="<%= item.url %>">Ga naar website</a>
+    <% } %>
+
+</article>
+    <% }) %>
+
+</section>

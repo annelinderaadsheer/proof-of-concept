@@ -361,7 +361,7 @@ header a img {
 }
 
 /* TEST button */
-.slide {
+/* .slide {
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 1px;
@@ -408,4 +408,76 @@ header a img {
 .slide:hover i {
   opacity: 1;
   transform: translateX(-6px);
+} */
+
+/* VACTURES */
+
+/* Algemene opmaak voor de vacatures sectie */
+.vacatures {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 2em;
+}
+
+/* Stijl voor elk artikel in de vacatures sectie */
+.vacatures article {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 2em; 
+  border-radius: 16px; 
+  border: 2px solid var(--grey); 
+  background-color: var(--white); 
+}
+
+/* Opmaak voor de titel */
+.vacatures article h1 {
+  font-size: 1.4em;
+  margin-bottom: 0;
+}
+
+/* Specifieke opmaak voor de beschrijving */
+.vacatures article p:first-of-type {
+  font-size: 1.2em;
+  margin: 0;
+  margin-top: 0.2em;
+}
+
+/* Algemene paragraaf opmaak in artikelen */
+.vacatures article p {
+  font-size: 1.2em;
+  margin: 0.4em 0;
+}
+
+/* Img vacature */
+.banner img {
+  width: 18em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 0.8em;
+}
+
+/* URL Link styling vacature */
+article a {
+  display: block;
+  font-size: 1.2em;
+  /* margin: 0; */
+  border-radius: 10px;
+  border: 2px solid var(--black);
+  padding: 0.5em;
+  color: var(--black);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+article a:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
 }
