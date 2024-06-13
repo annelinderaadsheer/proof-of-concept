@@ -247,22 +247,21 @@ header a img {
 
 /* VACTURES */
 
-/* Algemene opmaak voor de vacatures sectie */
+/* Algemene opmaak voor de vacatures */
 .vacatures {
   padding: 0.5em;
   /* display: flex; */
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
-  gap: 2em;  
+  /* gap: 2em;   */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  gap: 8px 8px;
+  gap: 2px 2px;
   grid-auto-flow: row;
 }
 
-/* Stijl voor elk artikel in de vacatures sectie */
 .vacatures article {
   padding: 2em;
   /* display: flex; */
@@ -270,19 +269,18 @@ header a img {
   /* justify-content: center; */
   align-items: flex-start;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  padding: 2em; 
+  padding: 1em; 
   border-radius: 8px; 
   border: 2px solid var(--grey); 
   background-color: var(--white); 
+  width: 80%;
 }
 
-/* Opmaak voor de titel */
 .vacatures article h1 {
   font-size: 1.6em;
   margin-bottom: 0;
 }
 
-/* Algemene paragraaf opmaak in artikelen */
 .vacatures article p {
   font-size: 1.2em;
   margin: 0.4em 0;
