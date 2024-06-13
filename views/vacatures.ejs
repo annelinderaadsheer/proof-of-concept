@@ -11,14 +11,18 @@
     <h1><%= item.title %></h1>
 
     <!-- Locatie -->
+    <% if (item.locatie) { %>
     <p>Locatie: <%= item.locatie %></p>
+    <% } %>
 
     <!-- Aantal uren -->
-    <p>Aantal uren: <%= item.hours %> uur</p>
+    <% if (item.hours) { %>
+    <p>Aantal uren: <%= item.hours %></p>
+    <% } %>
 
     <!-- Salaris -->
     <% if (item.salary) { %>
-    <p>Salaris: <%= item.salary %></p>
+    <p>Salaris: €<%= item.salary %></p>
     <% } %>
 
     <!-- Soort baan -->
@@ -48,3 +52,4 @@
     <% }) %>
 
 </section>
+

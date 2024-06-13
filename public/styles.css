@@ -22,7 +22,6 @@
   
 /* ELEMENTEN */
 
-/* Basisstijl voor het body-element */
 body {
     font-family: "Medium", sans-serif;
     line-height: 1.6;
@@ -30,7 +29,6 @@ body {
     padding: 0;
   }
   
-/* Kleur de tekst van span-elementen in de primaire kleur */
 span {
     color: var(--primary-color);
     font-weight: bold;
@@ -247,6 +245,112 @@ header a img {
   color: var(--white); 
 }
 
+/* VACTURES */
+
+/* Algemene opmaak voor de vacatures sectie */
+.vacatures {
+  padding: 0.5em;
+  /* display: flex; */
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 2em;  
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 8px 8px;
+  grid-auto-flow: row;
+}
+
+/* Stijl voor elk artikel in de vacatures sectie */
+.vacatures article {
+  padding: 2em;
+  /* display: flex; */
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 2em; 
+  border-radius: 8px; 
+  border: 2px solid var(--grey); 
+  background-color: var(--white); 
+}
+
+/* Opmaak voor de titel */
+.vacatures article h1 {
+  font-size: 1.6em;
+  margin-bottom: 0;
+}
+
+/* Algemene paragraaf opmaak in artikelen */
+.vacatures article p {
+  font-size: 1.2em;
+  margin: 0.4em 0;
+}
+
+/* Datum geplaatst */
+.vacatures article p:last-of-type {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Img vacature */
+.banner img {
+  width: 18em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 0.8em;
+  margin-bottom: 10px;
+}
+
+/* URL Link styling vacature */
+article a {
+  display: block;
+  font-size: 1.2em;
+  /* margin: 0; */
+  /* border-radius: 8px; */
+  /* border: 2px solid var(--grey); */
+  padding: 0.5em;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  width: 12em;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+article a:hover {
+  /* color: var(--black); */
+  color: blue;
+  /* color: var(--white); */
+}
+
+/* MEDIA QUERIES VACATURES */
+
+/* Voor kleine schermen (mobile first) */
+@media (min-width: 600px) {
+  .vacatures {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+/* Voor middelgrote schermen (tablets) */
+@media (min-width: 768px) {
+  .vacatures {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+/* Voor grote schermen (laptops en desktops) */
+@media (min-width: 1024px) {
+  .vacatures {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
 /* FOOTER */
 
 .footer {
@@ -358,158 +462,4 @@ header a img {
 .footer-mail span {
   color: red;
   margin-left: 5px;
-}
-
-/* TEST button */
-/* .slide {
-  font-size: 20px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 30px 13px;
-  outline: 0;
-  border: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.slide i {
-  opacity: 0;
-  font-size: 13px;
-  transition: 0.2s;
-  position: absolute;
-  right: 10px;
-  top: 21px;
-  transition: transform 1;
-}
-
-.slide div {
-  transition: transform 0.8s;
-
-}
-
-.slide:hover div {
-  transform: translateX(-6px);
-}
-
-.slide::after {
-  content: "";
-  background-color: var(--white);
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  border-radius: 0px; 
-  border: 2px solid var(--black); 
-}
-
-.slide:hover i {
-  opacity: 1;
-  transform: translateX(-6px);
-} */
-
-/* VACTURES */
-
-/* Algemene opmaak voor de vacatures sectie */
-.vacatures {
-  padding: 0.5em;
-  /* display: flex; */
-  flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  gap: 2em;  
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 8px 8px;
-  grid-auto-flow: row;
-}
-
-/* Stijl voor elk artikel in de vacatures sectie */
-.vacatures article {
-  padding: 2em;
-  /* display: flex; */
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: flex-start;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  padding: 2em; 
-  border-radius: 8px; 
-  border: 2px solid var(--grey); 
-  background-color: var(--white); 
-}
-
-/* Opmaak voor de titel */
-.vacatures article h1 {
-  font-size: 1.6em;
-  margin-bottom: 0;
-}
-
-/* Algemene paragraaf opmaak in artikelen */
-.vacatures article p {
-  font-size: 1.2em;
-  margin: 0.4em 0;
-}
-
-/* Datum geplaatst */
-.vacatures article p:last-of-type {
-  font-size: 1em;
-  font-weight: bold;
-}
-
-/* Img vacature */
-.banner img {
-  width: 18em;
-  height: 12em;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-top: 0.8em;
-  margin-bottom: 10px;
-}
-
-/* URL Link styling vacature */
-article a {
-  display: block;
-  font-size: 1.2em;
-  /* margin: 0; */
-  border-radius: 8px;
-  border: 2px solid var(--grey);
-  padding: 0.5em;
-  color: var(--black);
-  text-decoration: none;
-  font-weight: bold;
-  width: 14em;
-}
-
-article a:hover {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-/* MEDIA QUERIES VACATURES */
-
-/* Voor kleine schermen (mobile first) */
-@media (min-width: 600px) {
-  .vacatures {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-}
-
-/* Voor middelgrote schermen (tablets) */
-@media (min-width: 768px) {
-  .vacatures {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-}
-
-/* Voor grote schermen (laptops en desktops) */
-@media (min-width: 1024px) {
-  .vacatures {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-  }
 }
