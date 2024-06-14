@@ -279,6 +279,7 @@ header a img {
 .vacatures article h1 {
   font-size: 1.6em;
   margin-bottom: 0;
+  color: var(--primary-color);
 }
 
 .vacatures article p {
@@ -331,6 +332,9 @@ article a:hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
+  footer {
+    padding: 2em 10em;
+  }
 }
 
 /* Voor middelgrote schermen (tablets) */
@@ -338,6 +342,9 @@ article a:hover {
   .vacatures {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
+  }
+  footer {
+    padding: 2em 14em;
   }
 }
 
@@ -347,41 +354,44 @@ article a:hover {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
+  footer {
+    padding: 2em 26em;
+  }
 }
 
 /* FOOTER */
 
-.footer {
+footer {
   display: flex;
-  justify-content: space-between;
-  /* flex-direction: column;  */
-  align-items: center; 
-  background: var(--primary-color);
-  height: 100%;
-  text-align: center;
-  padding: 8px;
+  align-items: flex-start;
+  background-color: var(--primary-color);
+  color: var(--base--white);
+  flex-direction: row;
+  padding: 2em 4em;
 }
 
-.footer-elements-links {
+.footer-partners {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: flex-start;
+  margin-bottom: 1em;
+  margin-left: 2em;
 }
 
-.footer-elements-rechts {
-  display: flex;
-  justify-content: flex-end;
+.footer-partners h2 {
+  font-weight: bold;
+  font-size: 1.4em;
+  margin: 0.4em 0;
+  color: var(--black);
 }
 
-.footer-logo,
-.footer-button {
-  margin-bottom: 10px; 
+.footer-partners a:hover {
+  text-decoration: underline;
 }
 
-.footer-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.footer-partners {
+  margin: 0;
+  font-size: 1.2em;
 }
 
 .footer-logo {
@@ -393,6 +403,15 @@ article a:hover {
   height: auto; 
   font-size: 1.6em;
 }
+
+/* 
+.footer-logo,
+.footer-button {
+  margin-bottom: 10px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+} */
 
 .footer-button a {
   display: block; 
@@ -406,6 +425,7 @@ article a:hover {
   text-decoration: none; 
   color: var(--black); 
   text-align: center; 
+  font-weight: bold;
 }
 
 .footer-button a:hover {
@@ -415,12 +435,13 @@ article a:hover {
 }
 
 .footer-mail {
+  margin-left: auto;
   padding: 6px;
 }
 
 .footer-mail h2 {
   font-size: 1.8em;
-  color: (var(--black));
+  color: var(--black);
   margin-bottom: 15px;
 }
 
@@ -432,7 +453,6 @@ article a:hover {
   border: 2px solid var(--black); 
   padding: 0.5em; 
   background-color: var(--white); 
-  width: auto; 
 }
 
 .footer-mail .flex {
