@@ -250,11 +250,7 @@ header a img {
 /* Algemene opmaak voor de vacatures */
 .vacatures {
   padding: 0.5em;
-  /* display: flex; */
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* gap: 2em;   */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -263,22 +259,23 @@ header a img {
 }
 
 .vacatures article {
-  padding: 2em;
-  /* display: flex; */
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: flex-start;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  padding: 1em; 
-  border-radius: 8px; 
-  border: 2px solid var(--grey); 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: flex-start; 
+  margin: 0 auto; 
+  max-width: 25em; 
+  max-height: 40em;
+  padding: 2em; 
+  border-radius: 16px; 
+  border: 1px solid var(--grey); 
   background-color: var(--white); 
-  width: 80%;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
 }
 
 .vacatures article h1 {
   font-size: 1.6em;
-  margin-bottom: 0;
+  margin: 0;
   color: var(--primary-color);
 }
 
@@ -295,8 +292,10 @@ header a img {
 
 /* Img vacature */
 .banner img {
+  aspect-ratio: 16/16;
+
   width: 18em;
-  height: 12em;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   margin-top: 0.8em;
@@ -307,9 +306,6 @@ header a img {
 article a {
   display: block;
   font-size: 1.2em;
-  /* margin: 0; */
-  /* border-radius: 8px; */
-  /* border: 2px solid var(--grey); */
   padding: 0.5em;
   color: var(--primary-color);
   text-decoration: none;
@@ -319,9 +315,7 @@ article a {
 }
 
 article a:hover {
-  /* color: var(--black); */
   color: blue;
-  /* color: var(--white); */
 }
 
 /* MEDIA QUERIES VACATURES */
@@ -367,7 +361,12 @@ footer {
   background-color: var(--primary-color);
   color: var(--base--white);
   flex-direction: row;
-  padding: 2em 4em;
+  padding: 1em 1em;
+}
+
+.footer-logo, .footer-mail, .footer-partners {
+  flex: 1; /* Each section takes up equal space */
+  margin: 10px;
 }
 
 .footer-partners {
@@ -375,7 +374,7 @@ footer {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1em;
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 .footer-partners h2 {
@@ -404,14 +403,9 @@ footer {
   font-size: 1.6em;
 }
 
-/* 
-.footer-logo,
-.footer-button {
-  margin-bottom: 10px; 
-  display: flex;
+.footer-logo-button {
   flex-direction: column;
-  align-items: flex-start; 
-} */
+}
 
 .footer-button a {
   display: block; 
@@ -420,7 +414,7 @@ footer {
   border-radius: 10px; 
   border: 2px solid var(--black); 
   padding: 0.5em; 
-  background-color: var(--white);
+  /* background-color: var(--white); */
   width: 6em;
   text-decoration: none; 
   color: var(--black); 
@@ -429,7 +423,7 @@ footer {
 }
 
 .footer-button a:hover {
-  background-color: var(--grey);
+  background-color: var(--white);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
@@ -437,6 +431,11 @@ footer {
 .footer-mail {
   margin-left: auto;
   padding: 6px;
+}
+
+.footer-mail .flex {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-mail h2 {

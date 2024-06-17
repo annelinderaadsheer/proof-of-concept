@@ -2,11 +2,10 @@
 <%- include('./partials/head') %>
 
 <section class="vacatures">
-    <!-- Doe dit meerdere keren.. -->
+    <!-- Doe dit voor elk item -->
     <% data.forEach(item => { %>
 
-<article>
-
+    <article>
     <!-- Titel -->
     <h1><%= item.title %></h1>
 
@@ -35,10 +34,6 @@
     <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
     </picture>
 
-    <!-- Beschrijving -->
-    <% if (item.description) { %>
-    <p> <%= item.description %></p>
-    <% } %>    
 
     <!-- URL Link -->
     <% if (item.url) { %>

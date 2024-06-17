@@ -39,7 +39,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // GET-route voor de index homepagina
 app.get("/", function (request, response) {
-  response.render("index.ejs");
+  fetchJson(baseUrl + "/dda_agencies_vacancies").then(
+    (apiData) => {
+      {
+        response.render("index.ejs", { data: apiData.data });
+      }
+    }
+  );
 });
 
 // GET-route voor overzicht agencies pagina

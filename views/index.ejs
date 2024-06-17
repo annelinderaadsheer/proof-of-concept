@@ -24,9 +24,37 @@
             <p>Verslim je carrière bij de beste digitale bureaus. Pak je rol als developer of designer, als scrum master of marketeer of als strateeg. Start of groei door, en laat zien wat je kan.</p>
             <p>Op zoek naar een stageplek? Ga dan naar het overzicht met stages.</p>
             <!-- Vactures hier inladen-->
+            <div class="index-vacatures" style="display: flex;">
+                <% data.slice(0,3).forEach(item => { %>   
+
+                <article>
+                    
+                        <!-- Titel -->
+                        <h1><%= item.title %></h1>
+                    
+                        <!-- Foto -->
+                        <picture class="banner">
+                        <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
+                        </picture>
+                    
+                        <!-- URL Link -->
+                        <% if (item.url) { %>
+                        <a href="<%= item.url %>">Ga naar website ➜</a>
+                        <% } %>
+                    
+                        <!-- Datum geplaatst -->
+                        <p>Datum vacature geplaatst: <%= item.date_posted %></p>
+                    
+                </article>
+                    <% }) %>
+            </div>
+            
+
+
             <a href="./vacatures">Overzicht vacatures</a> 
         </section>
 
 </main>
+
 <!-- Hier word de footer geinclude -->
 <%- include('./partials/foot') %>
