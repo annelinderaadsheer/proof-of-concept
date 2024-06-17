@@ -318,6 +318,20 @@ article a:hover {
   color: blue;
 }
 
+/* Supports */
+@supports selector(view-transition-name) {
+  @view-transition {
+    navigation: auto;
+  }
+  
+  :root {
+    view-transition-name: none;
+  }
+  body {
+    view-transition-name: page;
+  }
+}
+
 /* MEDIA QUERIES VACATURES */
 
 /* Voor kleine schermen (mobile first) */
