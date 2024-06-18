@@ -1,4 +1,5 @@
-console.log('Hier komt je server voor Sprint 12.')
+console.log('Hier komt je server voor Sprint 12.');
+
 /*** Express setup & start ***/
 
 // Importeer het npm pakket express uit de node_modules map
@@ -26,7 +27,7 @@ app.use(express.static("public"));
 
 // Fetch de data van de API
 const fetchFromApi = (endpoint) => {
-  return fetchJson(baseUrl + endpoint).then((response) => response.data);
+return fetchJson(baseUrl + endpoint).then((response) => response.data);
 };
 
 // Data ophalen van de API
@@ -39,36 +40,47 @@ app.use(express.urlencoded({ extended: true }));
 
 // GET-route voor de index homepagina
 app.get("/", function (request, response) {
-  fetchJson(baseUrl + "/dda_agencies_vacancies").then(
-    (apiData) => {
-      {
-        response.render("index.ejs", { data: apiData.data });
-      }
-    }
-  );
+fetchJson(baseUrl + "/dda_agencies_vacancies").then(
+(apiData) => {
+{
+response.render("index.ejs", { data: apiData.data });
+}
+}
+);
 });
 
 // GET-route voor overzicht agencies pagina
 app.get("/agencies ", function (request, response) {
-  response.render("agencies");
+response.render("agencies");
 });
 
-// GET-route voor vacatures, eigen data inladen 
+// GET-route voor vacatures, eigen data inladen
 app.get("/vacatures", function (request, response) {
-  fetchJson(baseUrl + "/dda_agencies_vacancies").then(
-    (apiData) => {
-      {
-        response.render("vacatures.ejs", { data: apiData.data });
-      }
-    }
-  );
+fetchJson(baseUrl + "/dda_agencies_vacancies").then(
+(apiData) => {
+{
+response.render("vacatures.ejs", { data: apiData.data });
+}
+}
+);
 });
 
-// Poortnummer instellen waarop Express moet luisteren
-app.set("port", process.env.PORT || 8000);
+// GET-route voor agencies, eigen data inladen
+app.get("/agencies", function (request, response) {
+fetchJson(baseUrl + "/dda_agencies").then(
+(apiData) => {
+{
+response.render("agencies.ejs", { data: apiData.data });
+}
+}
+);
+});
 
-// Start express server op, haal daarbij het zojuist ingestelde poortnummer op
-app.listen(app.get("port"), function () {
-  // Toon een bericht in de console en geef het poortnummer door
-  console.log(`Application started on http://localhost:${app.get("port")}`);
+// Stel het poortnummer in waar express op moet gaan luisteren
+app.set('port', process.env.PORT || 8000);
+
+// Start express op en luister naar het ingestelde poortnummer
+app.listen(app.get('port'), function () {
+  // Toon een bericht in de console met het gebruikte poortnummer
+  console.log(`Application started on http://localhost:${app.get('port')}`);
 });

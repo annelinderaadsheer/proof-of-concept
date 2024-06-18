@@ -238,6 +238,8 @@ header a img {
 .main-index-article {
   padding: 2em;
   float: left;
+  margin-left: 10px; 
+  padding-left: 10px; 
 }
 
 /* Overzicht agencies knop */
@@ -395,7 +397,7 @@ footer {
 }
 
 .footer-logo, .footer-mail, .footer-partners {
-  flex: 1; /* Each section takes up equal space */
+  flex: 1fr, 1fr, 1fr;
   margin: 10px;
 }
 
@@ -509,4 +511,82 @@ footer {
 .footer-mail span {
   color: red;
   margin-left: 5px;
+}
+
+/* Algemene opmaak voor de agancies pagina */
+
+.agencies-pagina {
+  padding: 0.5em;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.agencies-pagina li {
+  list-style-type: none;
+  background-color: var(--white);
+  border-radius: 8px;
+  border: 1px solid var(--grey);
+  padding: 20px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0px 1px 0px, rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+
+.agencies-pagina h1 {
+  font-size: 1.6em;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.agencies-pagina .description-agencies-pagina {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.agencies-pagina p {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.agencies-pagina .banner-agencies-pagina img,
+.agencies-pagina .logo-agencies-pagina img {
+  aspect-ratio: 16/16;
+    width: 18em;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 0.8em;
+    margin-bottom: 10px;
+}
+
+.agencies-pagina .buttons-agencies-pagina {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.agencies-pagina .btn {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.agencies-pagina .btn.secondary {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.agencies-pagina .btn.secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.agencies-pagina .btn.primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.agencies-pagina .btn.primary:hover {
+  opacity: 0.8;
 }

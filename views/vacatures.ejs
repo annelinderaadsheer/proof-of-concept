@@ -1,48 +1,48 @@
-<!-- Hier word de header geinclude -->
+<!-- Hier wordt de header geïncludeerd -->
 <%- include('./partials/head') %>
 
 <section class="vacatures">
-    <!-- Doe dit voor elk item -->
-    <% data.forEach(item => { %>
+  <!-- Loop over elk item in de data -->
+  <% data.forEach(item => { %>
 
     <article>
-    <!-- Titel -->
-    <h1><%= item.title %></h1>
+      <!-- Titel -->
+      <h1><%= item.title %></h1>
 
-    <!-- Locatie -->
-    <% if (item.locatie) { %>
-    <p>Locatie: <%= item.locatie %></p>
-    <% } %>
+      <!-- Locatie -->
+      <% if (item.locatie) { %>
+        <p>Locatie: <%= item.locatie %></p>
+      <% } %>
 
-    <!-- Aantal uren -->
-    <% if (item.hours) { %>
-    <p>Aantal uren: <%= item.hours %></p>
-    <% } %>
+      <!-- Aantal uren -->
+      <% if (item.hours) { %>
+        <p>Aantal uren: <%= item.hours %></p>
+      <% } %>
 
-    <!-- Salaris -->
-    <% if (item.salary) { %>
-    <p>Salaris: €<%= item.salary %></p>
-    <% } %>
+      <!-- Salaris -->
+      <% if (item.salary) { %>
+        <p>Salaris: €<%= item.salary %></p>
+      <% } %>
 
-    <!-- Soort baan -->
-    <% if (item.employment) { %>
-    <p>Functie: <%= item.employment %></p>
-    <% } %>
+      <!-- Soort baan -->
+      <% if (item.employment) { %>
+        <p>Functie: <%= item.employment %></p>
+      <% } %>
 
-    <!-- Foto -->
-    <picture class="banner">
-    <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
-    </picture>
+      <!-- Foto -->
+      <picture class="banner">
+        <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
+      </picture>
 
-    <!-- URL Link -->
-    <% if (item.url) { %>
-    <a href="<%= item.url %>">Ga naar website ➜</a>
-    <% } %>
+      <!-- URL Link -->
+      <% if (item.url) { %>
+        <a href="<%= item.url %>">Ga naar website ➜</a>
+      <% } %>
 
-    <!-- Datum geplaatst -->
-    <p>Datum vacature geplaatst: <%= item.date_posted %></p>
+      <!-- Datum geplaatst -->
+      <p>Datum vacature geplaatst: <%= item.date_posted %></p>
 
-</article>
-    <% }) %>
+    </article>
 
+  <% }) %>
 </section>

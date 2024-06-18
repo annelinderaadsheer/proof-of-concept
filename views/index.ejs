@@ -1,58 +1,59 @@
-<!-- Hier word de header geinclude -->
+<!-- Hier wordt de header geïncludeerd -->
 <%- include('./partials/head') %>
 
 <main>
 
-    <section class="main-index">
-        <section class="main-index-wrapper">
-            <h2>Wie zijn wij?</h2>
-            <p>Samen maken digitale bureaus de wereld om ons heen steeds een beetje slimmer. <span>Dutch Digital Agencies</span> is de branchevereniging voor de beste verslimmers uit de Nederlandse digitale industrie.</p>
-            <a href="#">Word lid</a>
-        </section>
+  <section class="main-index">
+    <section class="main-index-wrapper">
+      <h2>Wie zijn wij?</h2>
+      <p>Samen maken digitale bureaus de wereld om ons heen steeds een beetje slimmer. <span>Dutch Digital Agencies</span> is de branchevereniging voor de beste verslimmers uit de Nederlandse digitale industrie.</p>
+      <a href="#">Word lid</a>
     </section>
+  </section>
 
-    <section class="main-index-article agencies">
-        <section class="main-index-article-tekst">
-            <h2>Agencies</h2>
-            <p>Digitale bureaus zetten technologische uitdagingen om in oplossingen die elke gebruiker verder brengen. Dat doen ze met gebruiksvriendelijke apps en websites, betrouwbare platforms en krachtige campagnes. Leer onze leden kennen en ontdek welk bureau het beste bij je past.</p>
-            <!-- Agencies hier inladen-->
-            <a href="#">Overzicht agencies</a> 
-        </section>
+  <section class="main-index-article agencies">
+    <section class="main-index-article-tekst">
+      <h2>Agencies</h2>
+      <p>Digitale bureaus zetten technologische uitdagingen om in oplossingen die elke gebruiker verder brengen. Dat doen ze met gebruiksvriendelijke apps en websites, betrouwbare platforms en krachtige campagnes. Leer onze leden kennen en ontdek welk bureau het beste bij je past.</p>
+      <!-- Agencies hier inladen-->
+      <a href="./agencies">Overzicht agencies</a>
+    </section>
+  </section>
 
-    <section class="main-index-article vacatures">
-        <section class="main-index-article-tekst">
-            <h2>Vacatures</h2>
-            <p>Verslim je carrière bij de beste digitale bureaus. Pak je rol als developer of designer, als scrum master of marketeer of als strateeg. Start of groei door, en laat zien wat je kan.</p>
-            <!-- Vactures hier inladen-->
-            <div class="index-vacatures" style="display: flex;">
-                <% data.slice(0,3).forEach(item => { %>   
+  <section class="main-index-article vacatures">
+    <section class="main-index-article-tekst">
+      <h2>Vacatures</h2>
+      <p>Verslim je carrière bij de beste digitale bureaus. Pak je rol als developer of designer, als scrum master of marketeer of als strateeg. Start of groei door, en laat zien wat je kan.</p>
+      <!-- Vacatures hier inladen -->
+      <div class="index-vacatures" style="display: flex;">
+        <% data.slice(0, 3).forEach(item => { %>
+          <article>
 
-                <article>
-                    
-                        <!-- Titel -->
-                        <h1><%= item.title %></h1>
-                    
-                        <!-- Foto -->
-                        <picture class="banner">
-                        <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
-                        </picture>
-                    
-                        <!-- URL Link -->
-                        <% if (item.url) { %>
-                        <a href="<%= item.url %>" class="vacature-link">Ga naar website ➜</a>
-                        <% } %>
-                    
-                        <!-- Datum geplaatst -->
-                        <p>Datum vacature geplaatst: <%= item.date_posted %></p>
-                    
-                </article>
-                    <% }) %>
-            </div>
+            <!-- Titel -->
+            <h1><%= item.title %></h1>
 
-            <a href="./vacatures">Overzicht vacatures</a> 
-        </section>
+            <!-- Foto -->
+            <picture class="banner">
+              <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
+            </picture>
+
+            <!-- URL Link -->
+            <% if (item.url) { %>
+              <a href="<%= item.url %>" class="vacature-link">Ga naar website ➜</a>
+            <% } %>
+
+            <!-- Datum geplaatst -->
+            <p>Datum vacature geplaatst: <%= item.date_posted %></p>
+
+          </article>
+        <% }) %>
+      </div>
+
+      <a href="./vacatures">Overzicht vacatures</a>
+    </section>
+  </section>
 
 </main>
 
-<!-- Hier word de footer geinclude -->
+<!-- Hier wordt de footer geïncludeerd -->
 <%- include('./partials/foot') %>
