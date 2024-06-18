@@ -318,12 +318,12 @@ article a:hover {
   color: blue;
 }
 
-/* Supports */
+/* SUPPORTS VIEW TRANSITIONS */
+
 @supports selector(view-transition-name) {
   @view-transition {
     navigation: auto;
   }
-  
   :root {
     view-transition-name: none;
   }
