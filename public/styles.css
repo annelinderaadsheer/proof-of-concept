@@ -19,6 +19,20 @@
     --grey: #aaa;
     --black: #202020;
   }
+
+/* SUPPORTS VIEW TRANSITIONS */
+
+@supports selector(view-transition-name) {
+  @view-transition {
+    navigation: auto;
+  }
+  :root {
+    view-transition-name: none;
+  }
+  body {
+    view-transition-name: page;
+  }
+}
   
 /* ELEMENTEN */
 
@@ -237,7 +251,8 @@ header a img {
   float: left;
   color: var(--primary-color);
   text-decoration: none; 
-  font-weight: bold; 
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .main-index-article a:hover {
@@ -263,7 +278,6 @@ header a img {
   flex-direction: column; 
   justify-content: center; 
   align-items: flex-start; 
-  margin: 0 auto; 
   max-width: 25em; 
   max-height: 40em;
   padding: 2em; 
@@ -293,7 +307,6 @@ header a img {
 /* Img vacature */
 .banner img {
   aspect-ratio: 16/16;
-
   width: 18em;
   height: auto;
   object-fit: cover;
@@ -318,18 +331,21 @@ article a:hover {
   color: blue;
 }
 
-/* SUPPORTS VIEW TRANSITIONS */
+.main-index-article.vacatures .vacature-link {
+  border: none;
+  display: block;
+  font-size: 1.2em;
+  padding: 0.5em;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  width: 12em;
+  /* border-bottom: 2px solid var(--primary-color); */
+}
 
-@supports selector(view-transition-name) {
-  @view-transition {
-    navigation: auto;
-  }
-  :root {
-    view-transition-name: none;
-  }
-  body {
-    view-transition-name: page;
-  }
+.main-index-article.vacatures .vacature-link:hover {
+  color: blue;
+  background-color: transparent;
 }
 
 /* MEDIA QUERIES VACATURES */

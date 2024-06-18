@@ -15,6 +15,7 @@
         <section class="main-index-article-tekst">
             <h2>Agencies</h2>
             <p>Digitale bureaus zetten technologische uitdagingen om in oplossingen die elke gebruiker verder brengen. Dat doen ze met gebruiksvriendelijke apps en websites, betrouwbare platforms en krachtige campagnes. Leer onze leden kennen en ontdek welk bureau het beste bij je past.</p>
+            <!-- Agencies hier inladen-->
             <a href="#">Overzicht agencies</a> 
         </section>
 
@@ -22,7 +23,6 @@
         <section class="main-index-article-tekst">
             <h2>Vacatures</h2>
             <p>Verslim je carrière bij de beste digitale bureaus. Pak je rol als developer of designer, als scrum master of marketeer of als strateeg. Start of groei door, en laat zien wat je kan.</p>
-            <p>Op zoek naar een stageplek? Ga dan naar het overzicht met stages.</p>
             <!-- Vactures hier inladen-->
             <div class="index-vacatures" style="display: flex;">
                 <% data.slice(0,3).forEach(item => { %>   
@@ -39,7 +39,7 @@
                     
                         <!-- URL Link -->
                         <% if (item.url) { %>
-                        <a href="<%= item.url %>">Ga naar website ➜</a>
+                        <a href="<%= item.url %>" class="vacature-link">Ga naar website ➜</a>
                         <% } %>
                     
                         <!-- Datum geplaatst -->
@@ -48,8 +48,6 @@
                 </article>
                     <% }) %>
             </div>
-            
-
 
             <a href="./vacatures">Overzicht vacatures</a> 
         </section>
