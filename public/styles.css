@@ -389,16 +389,18 @@ article a:hover {
 
 footer {
   display: flex;
+  justify-content: space-between;
   align-items: flex-start;
   background-color: var(--primary-color);
   color: var(--base--white);
   flex-direction: row;
-  padding: 1em 1em;
+  padding: 20px;
 }
 
 .footer-logo, .footer-mail, .footer-partners {
-  flex: 1fr, 1fr, 1fr;
-  margin: 10px;
+  flex: 1;
+  /* margin: 10px; */
+  margin-right: 20px;
 }
 
 .footer-partners {
@@ -411,7 +413,7 @@ footer {
 
 .footer-partners h2 {
   font-weight: bold;
-  font-size: 1.4em;
+  /* font-size: 1.4em; */
   margin: 0.4em 0;
   color: var(--black);
 }
@@ -446,7 +448,6 @@ footer {
   border-radius: 10px; 
   border: 2px solid var(--black); 
   padding: 0.5em; 
-  /* background-color: var(--white); */
   width: 6em;
   text-decoration: none; 
   color: var(--black); 
@@ -471,7 +472,7 @@ footer {
 }
 
 .footer-mail h2 {
-  font-size: 1.8em;
+  /* font-size: 1.8em; */
   color: var(--black);
   margin-bottom: 15px;
 }

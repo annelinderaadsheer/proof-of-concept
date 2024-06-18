@@ -2,85 +2,63 @@ console.log('Hier komt je server voor Sprint 12.');
 
 /*** Express setup & start ***/
 
-// Importeer het npm pakket express uit de node_modules map
 import express from "express";
-
-// Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from "./helpers/fetch-json.js";
 
-// Declare de base URL van de directus API
 const baseUrl = "https://fdnd-agency.directus.app/items";
 
-// Maak een nieuwe express app aan
 const app = express();
+
+// Middleware voor JSON en URL-encoded body parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Stel ejs in als template engine
+// Template engine instellen op EJS
 app.set("view engine", "ejs");
-
-// Stel de map met ejs templates in
 app.set("views", "./views");
 
-// Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
+// Statische bestanden serveren vanuit de 'public' map
 app.use(express.static("public"));
 
-// Fetch de data van de API
+// Functie om data van de API op te halen
 const fetchFromApi = (endpoint) => {
-return fetchJson(baseUrl + endpoint).then((response) => response.data);
+  return fetchJson(baseUrl + endpoint).then((response) => response.data);
 };
 
-// Data ophalen van de API
-// fetchData().then((allAdvertisementsData) => {
-
-// Zorg dat werken met request data makkelijker wordt
-app.use(express.urlencoded({ extended: true }));
-
-// GET-routes
-
-// GET-route voor de index homepagina
+// GET-route voor de homepagina
 app.get("/", function (request, response) {
-fetchJson(baseUrl + "/dda_agencies_vacancies").then(
-(apiData) => {
-{
-response.render("index.ejs", { data: apiData.data });
-}
-}
-);
+  fetchJson(baseUrl + "/dda_agencies_vacancies").then((apiData) => {
+    response.render("index.ejs", { data: apiData.data });
+  }).catch((error) => {
+    console.error("Error fetching data:", error);
+    response.status(500).send("Error fetching data");
+  });
 });
 
-// GET-route voor overzicht agencies pagina
-app.get("/agencies ", function (request, response) {
-response.render("agencies");
-});
-
-// GET-route voor vacatures, eigen data inladen
-app.get("/vacatures", function (request, response) {
-fetchJson(baseUrl + "/dda_agencies_vacancies").then(
-(apiData) => {
-{
-response.render("vacatures.ejs", { data: apiData.data });
-}
-}
-);
-});
-
-// GET-route voor agencies, eigen data inladen
+// GET-route voor de agencies pagina
 app.get("/agencies", function (request, response) {
-fetchJson(baseUrl + "/dda_agencies").then(
-(apiData) => {
-{
-response.render("agencies.ejs", { data: apiData.data });
-}
-}
-);
+  fetchJson(baseUrl + "/dda_agencies").then((apiData) => {
+    response.render("agencies.ejs", { data: apiData.data });
+  }).catch((error) => {
+    console.error("Error fetching data:", error);
+    response.status(500).send("Error fetching data");
+  });
 });
 
-// Stel het poortnummer in waar express op moet gaan luisteren
-app.set('port', process.env.PORT || 8000);
+// GET-route voor de vacatures pagina
+app.get("/vacatures", function (request, response) {
+  fetchJson(baseUrl + "/dda_agencies_vacancies").then((apiData) => {
+    response.render("vacatures.ejs", { data: apiData.data });
+  }).catch((error) => {
+    console.error("Error fetching data:", error);
+    response.status(500).send("Error fetching data");
+  });
+});
 
-// Start express op en luister naar het ingestelde poortnummer
-app.listen(app.get('port'), function () {
-  // Toon een bericht in de console met het gebruikte poortnummer
-  console.log(`Application started on http://localhost:${app.get('port')}`);
+// Poortnummer instellen
+const port = process.env.PORT || 8000;
+
+// Server starten
+app.listen(port, function () {
+  console.log(`Application started on http://localhost:${port}`);
 });

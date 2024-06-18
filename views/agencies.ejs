@@ -2,21 +2,23 @@
 <%- include('./partials/head') %>
 
 <section class="agencies-pagina">
-  <% data.forEach(item=> { %>
-  <li>
-    <h1>
-        <%= item.title %>
-      </h1>
+  <% data.forEach(item => { %>
+    <li>
+      <h1><%= item.title %></h1>
 
       <div class="banner-agencies-pagina">
         <picture class="banner-agencies-pagina">
           <% if (item.photo) { %>
-          <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
+            <img src="https://fdnd-agency.directus.app/assets/<%= item.photo %>" alt="">
           <% } %>
         </picture>
-        
+
         <div class="description-agencies-pagina">
-          <%- item.summary || "<p>Er is momenteel geen intro beschrijving voor dit bedrijf.</p>" %>
+          <% if (item.summary) { %>
+            <%- item.summary %>
+          <% } else { %>
+            <p>Er is momenteel geen intro beschrijving voor dit bedrijf.</p>
+          <% } %>
         </div>
 
         <picture class="logo-agencies-pagina">
@@ -24,15 +26,11 @@
         </picture>
       </div>
 
-      <p>
-        Open vacatures: <%= item.vacancies.length %>
-      </p>
+      <p>Open vacatures: <%= item.vacancies.length %></p>
 
-      <div class="buttons-agencies=pagina">
+      <div class="buttons-agencies-pagina">
         <a aria-label="Bekijk alle vacatures" class="btn secondary line-animation" href="/member/<%= item.id %>#vacancies">Bekijk open vacatures</a>
       </div>
-
     </li>
-    <% }) %>
-
+  <% }); %>
 </section>
