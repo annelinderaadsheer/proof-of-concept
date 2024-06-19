@@ -1,18 +1,14 @@
 /* ROOTS & FONTS */
-
-/* Definieer het lettertype "Medium" */
 @font-face {
     font-family: "Medium";
     src: url("/fonts/Medium.otf") format("opentype");
   }
   
-/* Definieer het lettertype "Bold" */
 @font-face {
     font-family: "Bold";
     src: url("/fonts/Bold.otf") format("opentype");
   }
   
-/* Definieer root variabelen voor kleuren */
 :root {
     --primary-color: rgb(97, 73, 216);
     --white: #fff;
@@ -21,7 +17,6 @@
   }
 
 /* SUPPORTS VIEW TRANSITIONS */
-
 @supports selector(view-transition-name) {
   @view-transition {
     navigation: auto;
@@ -35,7 +30,6 @@
 }
   
 /* ELEMENTEN */
-
 body {
     font-family: "Medium", sans-serif;
     line-height: 1.6;
@@ -49,8 +43,6 @@ span {
   }
 
 /* HEADER */
-  
-/* Stijl voor links / img in de header (logo) */
 header a img {
     display: flex;
     justify-content: flex-start;
@@ -61,12 +53,6 @@ header a img {
     height: auto; 
   }
   
-/* Navigation */
-/* .navigation {
-    display: none;
-  } */
-  
-/* Hamburger-menu */
 .hamburger-menu {
     height: 0;
   }
@@ -170,8 +156,7 @@ header a img {
     color: var(--primary-color);
   }  
 
-/* MAIN */
-
+/* MAIN index */
 .main-index {
   min-height: 20em; 
   min-width: 24em; 
@@ -202,17 +187,14 @@ header a img {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); 
 }
 
-/* H2 element */
 .main-index-wrapper h2 {
   margin: 0.2em 0;
 }
 
-/* P element */
 .main-index-wrapper p {
   font-size: 1em; 
 }
 
-/* Word lid knop */
 .main-index-wrapper a {
   display: block; 
   font-size: 1.2em; 
@@ -230,7 +212,7 @@ header a img {
   color: var(--white); 
 }
 
-/* Agencies */
+/* AGENCIES index */
 .agencies {
   margin-top: 10em;
 }
@@ -242,7 +224,6 @@ header a img {
   padding-left: 10px; 
 }
 
-/* Overzicht agencies knop */
 .main-index-article a {
   display: block; 
   font-size: 1.2em; 
@@ -262,9 +243,7 @@ header a img {
   color: var(--white); 
 }
 
-/* VACTURES */
-
-/* Algemene opmaak voor de vacatures */
+/* VACTURES pagina */
 .vacatures {
   padding: 0.5em;
   flex-direction: column;
@@ -306,7 +285,6 @@ header a img {
   font-weight: bold;
 }
 
-/* Img vacature */
 .banner img {
   aspect-ratio: 16/16;
   width: 18em;
@@ -317,7 +295,6 @@ header a img {
   margin-bottom: 10px;
 }
 
-/* URL Link styling vacature */
 article a {
   display: block;
   font-size: 1.2em;
@@ -342,7 +319,6 @@ article a:hover {
   text-decoration: none;
   font-weight: bold;
   width: 12em;
-  /* border-bottom: 2px solid var(--primary-color); */
 }
 
 .main-index-article.vacatures .vacature-link:hover {
@@ -351,7 +327,6 @@ article a:hover {
 }
 
 /* MEDIA QUERIES VACATURES */
-
 /* Voor kleine schermen (mobile first) */
 @media (min-width: 600px) {
   .vacatures {
@@ -378,7 +353,7 @@ article a:hover {
 @media (min-width: 1024px) {
   .vacatures {
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: auto;
   }
   footer {
     padding: 2em 26em;
@@ -386,14 +361,13 @@ article a:hover {
 }
 
 /* FOOTER */
-
 footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: var(--white);
   flex-direction: row;
   padding: 20px;
+  border-top: 1px solid;
 }
 
 .footer-logo, .footer-mail, .footer-partners {
@@ -484,7 +458,13 @@ footer {
   border-radius: 4px; 
   border: 2px solid var(--black); 
   padding: 0.5em; 
-  background-color: var(--white); 
+  background-color: transparent; 
+}
+
+.footer-mail fieldset:hover {
+  background-color: var(--white);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .footer-mail .flex {
@@ -514,8 +494,7 @@ footer {
   margin-left: 5px;
 }
 
-/* Algemene opmaak voor de agancies pagina */
-
+/* AGENCIES pagina */
 .agencies-pagina {
   padding: 0.5em;
   display: grid;
