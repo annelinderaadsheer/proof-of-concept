@@ -5,7 +5,7 @@
 
 De Voorhoede is een Nederlands digitaal bureau, opgericht in 2012, dat gespecialiseerd is in front-end development en het bouwen van snelle, toegankelijke websites en webapplicaties. Ze bieden diensten zoals webdevelopment, performance optimalisatie, en accessibility audits, en werken met diverse klanten van startups tot grote bedrijven
 
-Bekijk de website zelf hier:
+Bekijk de website zelf hier: https://proof-of-concept-0j2y.onrender.com
 
 <img width="1470" alt="Scherm­afbeelding 2024-06-19 om 10 27 17" src="https://github.com/annelinderaadsheer/proof-of-concept/assets/144004885/0a798159-4072-4d05-b5df-1e6515758f7f">
 
