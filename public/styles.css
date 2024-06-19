@@ -262,6 +262,7 @@ header a img {
   max-width: 25em; 
   max-height: 40em;
   padding: 2em; 
+  margin: 1px;
   border-radius: 16px; 
   border: 1px solid var(--grey); 
   background-color: var(--white); 
@@ -367,9 +368,8 @@ footer {
   align-items: flex-start;
   flex-direction: row;
   padding: 20px;
-  /* border-top: 1px solid; */
   background: rgb(106,99,246);
-  background: linear-gradient(90deg, rgba(106,99,246,1) 0%, rgba(255,255,255,1) 50%, rgba(230,230,230,1) 100%);
+  background: linear-gradient(0deg, rgba(106,99,246,1) 0%, rgba(230,230,230,1) 53%, rgba(255,255,255,1) 72%);
 }
 
 .footer-logo, .footer-mail, .footer-partners {
